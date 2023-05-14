@@ -33,8 +33,8 @@ describe('JettonWallet', () => {
     it('should deploy', async () => {});
 
     it('should return correct data', async () => {
-        expect((await jettonWallet.getOwner()).equals(ownerAddress)).toBeTruthy();
+        expect(await jettonWallet.getOwner()).toEqualAddress(ownerAddress);
         expect(await jettonWallet.getBalance()).toEqual(toNano('1.23'));
-        expect((await jettonWallet.getMaster()).equals(masterAddress)).toBeTruthy();
+        expect(await jettonWallet.getMaster()).toEqualAddress(masterAddress);
     });
 });

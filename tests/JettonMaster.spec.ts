@@ -32,7 +32,7 @@ describe('JettonMaster', () => {
     it('should deploy', async () => {});
 
     it('should return correct data', async () => {
-        expect((await jettonMaster.getContent()).equals(beginCell().storeStringTail('test!').endCell())).toBeTruthy();
-        expect((await jettonMaster.getWalletCode()).equals(walletCode)).toBeTruthy();
+        expect(await jettonMaster.getContent()).toEqualCell(beginCell().storeStringTail('test!').endCell());
+        expect(await jettonMaster.getWalletCode()).toEqualCell(walletCode);
     });
 });
