@@ -8,7 +8,11 @@ export type JettonMasterConfig = {
 };
 
 export function jettonMasterConfigToCell(config: JettonMasterConfig): Cell {
-    return beginCell().storeRef(config.content).storeRef(walletCode).endCell();
+    return beginCell()
+        .storeRef(config.content)
+        .storeRef(walletCode)
+        .storeUint(BigInt(Math.floor(Math.random() * 100000000000000)), 48)
+        .endCell();
 }
 
 export class JettonMaster implements Contract {
