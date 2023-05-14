@@ -1,8 +1,7 @@
 import { Blockchain, SandboxContract } from '@ton-community/sandbox';
-import { Address, Cell, toNano } from 'ton-core';
+import { Address, toNano } from 'ton-core';
 import { JettonWallet } from '../wrappers/JettonWallet';
 import '@ton-community/test-utils';
-import { compile } from '@ton-community/blueprint';
 import { randomAddress } from '@ton-community/test-utils';
 
 describe('JettonWallet', () => {

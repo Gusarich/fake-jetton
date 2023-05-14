@@ -1,6 +1,6 @@
 import { Address, beginCell, Cell, Contract, contractAddress, ContractProvider, Sender, SendMode } from 'ton-core';
 
-const code = Cell.fromBase64('te6cckEBAQEAFAAAJIIBewK68ovtRND6APpA+kDUMLRwCU0=');
+export const walletCode = Cell.fromBase64('te6cckEBAQEAFAAAJIIBewK68ovtRND6APpA+kDUMLRwCU0=');
 
 export type JettonWalletConfig = {
     owner: Address;
@@ -13,7 +13,7 @@ export function jettonWalletConfigToCell(config: JettonWalletConfig): Cell {
         .storeCoins(config.balance)
         .storeAddress(config.owner)
         .storeAddress(config.master)
-        .storeRef(code)
+        .storeRef(walletCode)
         .endCell();
 }
 
@@ -26,7 +26,7 @@ export class JettonWallet implements Contract {
 
     static createFromConfig(config: JettonWalletConfig, workchain = 0) {
         const data = jettonWalletConfigToCell(config);
-        const init = { code, data };
+        const init = { code: walletCode, data };
         return new JettonWallet(contractAddress(workchain, init), init);
     }
 

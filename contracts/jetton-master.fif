@@ -1,0 +1,15 @@
+"Asm.fif" include
+
+<{
+    106029 PUSHINT EQUAL 11 THROWIFNOT
+    1000000000000000000 PUSHINT
+    0 PUSHINT
+    x{0} PUSHSLICE
+    c4 PUSH
+    CTOS
+    LDREF
+    LDREF
+    DROP
+}>c
+
+2 boc+>B B>base64 type cr
