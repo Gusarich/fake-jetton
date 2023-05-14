@@ -5,7 +5,10 @@ import { NetworkProvider } from '@ton-community/blueprint';
 export async function run(provider: NetworkProvider) {
     const jettonMaster = provider.open(
         JettonMaster.createFromConfig({
-            content: beginCell().endCell(),
+            content: beginCell()
+                .storeUint(1, 8)
+                .storeStringTail('https://raw.githubusercontent.com/Gusarich/fake-jetton/main/scripts/metadata.json')
+                .endCell(),
         })
     );
 
