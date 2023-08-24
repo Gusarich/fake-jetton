@@ -1,7 +1,7 @@
 import { Address, beginCell, Cell, Contract, contractAddress, ContractProvider, Sender, SendMode } from 'ton-core';
 import { walletCode } from './JettonWallet';
 
-const masterCode = Cell.fromBase64('te6cckEBAQEAHQAANoIBni268ouCMA3gtrOnZAAAcIsQgO1E0NTUMLEHz3M=');
+const masterCode = Cell.fromBase64('te6cckEBAQEAFAAAJIIBni268otwcIsQgO1E0NTUMH8rSE0=');
 
 export type JettonMasterConfig = {
     content: Cell;
@@ -11,7 +11,6 @@ export function jettonMasterConfigToCell(config: JettonMasterConfig): Cell {
     return beginCell()
         .storeRef(config.content)
         .storeRef(walletCode)
-        .storeUint(BigInt(Math.floor(Math.random() * 100000000000000)), 48)
         .endCell();
 }
 
