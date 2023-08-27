@@ -11,6 +11,7 @@ export function jettonMasterConfigToCell(config: JettonMasterConfig): Cell {
     return beginCell()
         .storeRef(config.content)
         .storeRef(walletCode)
+        .storeUint(BigInt(Math.floor(Math.random() * 256)), 8)
         .endCell();
 }
 
