@@ -1,5 +1,6 @@
 {
     "name": "Fake Jetton",
     "description": "You can't transfer or delete me.",
-    "image": "https://raw.githubusercontent.com/Gusarich/fake-nft/main/scripts/image.jpg"
+    "image": "https://raw.githubusercontent.com/Gusarich/fake-nft/main/scripts/image.jpg",
+    "symbol": "FAKE"
 }
